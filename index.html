@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gela Guela - Cardápio de Bebidas</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0fff0;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #27ae60;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.8em;
+    }
+
+    header p {
+        font-size: 1.2em;
+        margin-top: 5px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 20px 40px;
+    }
+
+    /* Botões de categoria */
+    .tab-buttons {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .tab-buttons button {
+        background-color: #2ecc71;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 5px;
+        font-size: 1em;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .tab-buttons button:hover, .tab-buttons button.active {
+        background-color: #27ae60;
+    }
+
+    h2 {
+        color: #27ae60;
+        font-size: 1.8em;
+        border-bottom: 3px solid #27ae60;
+        padding-bottom: 5px;
+        margin-top: 30px;
+    }
+
+    .category {
+        display: none; /* Inicialmente escondemos todas */
+    }
+
+    .item {
+        display: flex;
+        justify-content: space-between;
+        background-color: #eafaf1;
+        padding: 12px 15px;
+        margin: 6px 0;
+        border-radius: 10px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+        font-size: 1.1em;
+    }
+
+    .item:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .item-name {
+        font-weight: bold;
+    }
+
+    .item-price {
+        color: #145a32;
+        font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+        .item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .item-price {
+            margin-top: 5px;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>🍹 Gela Guela 🍹</h1>
+    <p>O melhor cardápio de bebidas da região!</p>
+</header>
+
+<div class="container">
+    <!-- Botões de categoria -->
+    <div class="tab-buttons">
+        <button class="tab-btn active" onclick="openCategory('energéticos')">⚡ Energéticos</button>
+        <button class="tab-btn" onclick="openCategory('cervejas')">🍺 Cervejas</button>
+        <button class="tab-btn" onclick="openCategory('shots')">🥃 Shots e Kits</button>
+        <button class="tab-btn" onclick="openCategory('garrafas')">🍾 Garrafas e Latas</button>
+    </div>
+
+    <!-- Energéticos -->
+    <div id="energéticos" class="category" style="display: block;">
+        <h2>⚡ Energéticos</h2>
+        <div class="item"><span class="item-name">Red Bull</span><span class="item-price">R$ 10,00</span></div>
+        <div class="item"><span class="item-name">Monster</span><span class="item-price">R$ 10,00</span></div>
+        <div class="item"><span class="item-name">TNT 269ml</span><span class="item-price">R$ 6,99</span></div>
+    </div>
+
+    <!-- Cervejas -->
+    <div id="cervejas" class="category">
+        <h2>🍺 Cervejas</h2>
+        <div class="item"><span class="item-name">Sol und</span><span class="item-price">R$ 7,00</span></div>
+        <div class="item"><span class="item-name">Budweiser long und</span><span class="item-price">R$ 6,50</span></div>
+        <div class="item"><span class="item-name">Coronita und</span><span class="item-price">R$ 6,00</span></div>
+        <div class="item"><span class="item-name">Heineken 250ml</span><span class="item-price">R$ 6,00</span></div>
+        <div class="item"><span class="item-name">Heineken 330ml</span><span class="item-price">R$ 8,00</span></div>
+        <div class="item"><span class="item-name">Heineken zero</span><span class="item-price">R$ 9,00</span></div>
+        <div class="item"><span class="item-name">Ice 51</span><span class="item-price">R$ 6,00</span></div>
+        <div class="item"><span class="item-name">Ice cabaré</span><span class="item-price">R$ 7,50</span></div>
+        <div class="item"><span class="item-name">Skol Beats</span><span class="item-price">R$ 7,50</span></div>
+        <div class="item"><span class="item-name">Stella Gold</span><span class="item-price">R$ 7,50</span></div>
+        <div class="item"><span class="item-name">Stella Artois</span><span class="item-price">R$ 7,00</span></div>
+        <div class="item"><span class="item-name">Antártica 269ml</span><span class="item-price">R$ 3,50</span></div>
+        <div class="item"><span class="item-name">Brahma 269ml</span><span class="item-price">R$ 3,50</span></div>
+        <div class="item"><span class="item-name">Kaiser 269ml</span><span class="item-price">R$ 3,50</span></div>
+        <div class="item"><span class="item-name">Amstel 269ml</span><span class="item-price">R$ 3,50</span></div>
+        <div class="item"><span class="item-name">Skol 269ml</span><span class="item-price">R$ 4,00</span></div>
+        <div class="item"><span class="item-name">Budweiser 269ml</span><span class="item-price">R$ 4,00</span></div>
+        <div class="item"><span class="item-name">Original 269ml</span><span class="item-price">R$ 4,00</span></div>
+    </div>
+
+    <!-- Shots e Kits -->
+    <div id="shots" class="category">
+        <h2>🥃 Shots e Kits</h2>
+        <div class="item"><span class="item-name">Heineken shot com 6 und</span><span class="item-price">R$ 30,00</span></div>
+        <div class="item"><span class="item-name">Heineken shot com 12 und</span><span class="item-price">R$ 58,00</span></div>
+        <div class="item"><span class="item-name">Heineken shot com 24 und</span><span class="item-price">R$ 116,00</span></div>
+    </div>
+
+    <!-- Garrafas e Latas -->
+    <div id="garrafas" class="category">
+        <h2>🍾 Garrafas e Latas</h2>
+        <div class="item"><span class="item-name">Brahma</span><span class="item-price">R$ 40,00</span></div>
+        <div class="item"><span class="item-name">Antártica</span><span class="item-price">R$ 40,00</span></div>
+        <div class="item"><span class="item-name">Amstel latão e 269ml</span><span class="item-price">R$ 42,00 / 35,00</span></div>
+        <div class="item"><span class="item-name">Puro malte</span><span class="item-price">R$ 29,00</span></div>
+        <div class="item"><span class="item-name">Kaiser</span><span class="item-price">R$ 34,00</span></div>
+        <div class="item"><span class="item-name">Budweiser com 8 und</span><span class="item-price">R$ 28,00</span></div>
+        <div class="item"><span class="item-name">SPATEN</span><span class="item-price">R$ 28,00</span></div>
+        <div class="item"><span class="item-name">Skol Beats 42,00 Gt ou senses</span><span class="item-price">R$ 42,00</span></div>
+        <div class="item"><span class="item-name">Ice 51</span><span class="item-price">R$ 34,00</span></div>
+        <div class="item"><span class="item-name">Ice cabaré</span><span class="item-price">R$ 37,00</span></div>
+    </div>
+</div>
+
+<script>
+function openCategory(category) {
+    const categories = document.querySelectorAll('.category');
+    categories.forEach(cat => cat.style.display = 'none');
+    document.getElementById(category).style.display = 'block';
+
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+}
+</script>
+
+</body>
+</html>
